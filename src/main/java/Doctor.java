@@ -1,5 +1,5 @@
 
-public class Doctor extends Employee implements CareForPatient {
+public class Doctor extends Employee implements CareForPatient, DrawBlood {
 
 	private String specialty;
 	
@@ -15,6 +15,10 @@ public class Doctor extends Employee implements CareForPatient {
 	
 	public void careForPatient(Patient patient) {
 		patient.heal(10);
+	}
+	
+	public void drawBlood (Patient patient) {
+		patient.drawBlood(5);
 	}
 
 }

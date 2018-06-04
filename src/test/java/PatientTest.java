@@ -20,4 +20,17 @@ public class PatientTest {
 		//Assert
 		assertThat(patientHealthAfterHealing, equalTo(patientHealthBeforeHealing + 5));
 	}
+	
+	@Test
+	public void drawingBloodShouldDecreasePatientBloodLevel () {
+		
+		int patientBloodLevelBeforeBloodDraw = patient.getBloodLevel();
+		
+		patient.drawBlood(5);
+		int patientBloodLevelAfterBloodDraw = patient.getBloodLevel();
+		
+		assertThat(patientBloodLevelAfterBloodDraw, equalTo(patientBloodLevelBeforeBloodDraw - 5));
+		
+		
+	}
 }

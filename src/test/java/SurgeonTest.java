@@ -1,12 +1,13 @@
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-public class DoctorTest {
-
-	Doctor phil = new Doctor("Phil", "1111", "Heart", 90000);
-
+public class SurgeonTest {
+	
+	Surgeon harry = new Surgeon ("Harry", "5555", "Brain", 120000, true);
+	
+	
 	@Test
 	public void careForPatientShouldIncreasePatientHealth() {
 
@@ -15,7 +16,7 @@ public class DoctorTest {
 		int patientHealthBeforeCare = patient.getHealthLevel();
 
 		// Act
-		phil.careForPatient(patient);
+		harry.careForPatient(patient);
 		int patientHealthAfterCare = patient.getHealthLevel();
 
 		// Assert
@@ -23,16 +24,16 @@ public class DoctorTest {
 	}
 	
 	@Test
-	public void calculatePayShouldReturnDoctorSalary() {
-		
-		//Arrange
-		
-		
-		//Act
-		int doctorSalary = phil.calculatePay();
-		
-		//Assert
-		assertThat(doctorSalary, equalTo(90000));
+	public void calculateSalaryShouldReturnSalary () {
+	
+	//Arrange
+	
+	//Act
+	int receptionistSalary = harry.calculatePay();
+	
+	//Assert
+	assertThat(receptionistSalary, equalTo(120000));
+	
 	}
 	
 	@Test
@@ -41,10 +42,18 @@ public class DoctorTest {
 		Patient patient = new Patient (25, 25);
 		int patientBloodLevelBeforeBloodDraw = patient.getBloodLevel();
 		
-		phil.drawBlood(patient);
+		harry.drawBlood(patient);
 		int patientBloodLevelAfterBloodDraw = patient.getBloodLevel();
 		
 		assertThat(patientBloodLevelAfterBloodDraw, equalTo(patientBloodLevelBeforeBloodDraw - 5));
+	}
+	
+	@Test
+	public void isOperatingShouldReturnTrue () {
+		
+		boolean isOnPhone = harry.isOperating();
+		
+		assertThat(isOnPhone, equalTo(true));
 	}
 
 }
