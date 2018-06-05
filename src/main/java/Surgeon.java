@@ -1,33 +1,31 @@
 
-public class Surgeon extends Doctor {
+public class Surgeon extends Doctor implements CareForPatient, DrawBlood {
 
-	private String specialty;
 	private boolean isOperating;
 
 	public Surgeon(String name, String employeeNumber, String specialty, int salary, boolean isOperating) {
 	
-		super(name, employeeNumber, specialty, salary);
-		this.specialty = specialty;
+		super(name, employeeNumber, specialty, salary); // don't quite get this.
 		this.isOperating = isOperating;
 	}
 	
-	public String getSpecialty() {
-		return specialty;
-	}
-	
-	public void careForPatient(Patient patient) {
-		patient.heal(10);
-	}
-	
-	public void drawBlood (Patient patient) {
-		patient.drawBlood(5);
-	}
-
 	public boolean isOperating() {
 
-		return true;
+		return isOperating;
 	}
 
+	public void toggleIsOperating() {
+
+		isOperating = !isOperating;
+	}
+
+	@Override
+	public String toString() {
+		return getName()+ "\t" + getEmployeeNumber()+ "\t" + getSpecialty()+ "\t" + isOperating();
+	}
+
+	
+	
 
 	
 

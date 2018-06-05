@@ -7,15 +7,16 @@ public class Patient {
 	private int bloodLevel = BLOOD_LEVEL;
 	private int healthLevel = HEALTH_LEVEL;
 
-	
+	private String patientName;
+	private String patientID;
 	
 	public Patient() {
 		super();
 	}
 
-
-	public Patient(int bloodLevel, int healthLevel) {
-
+	public Patient(String patientID, String patientName, int bloodLevel, int healthLevel) {
+		this.patientID = patientID;
+		this.patientName = patientName;
 		this.bloodLevel = bloodLevel;
 		this.healthLevel = healthLevel;
 	}
@@ -37,9 +38,18 @@ public class Patient {
 		}
 
 
-	public void drawBlood(int amountToDraw) {
+	public void bleed(int amountToDraw) {
 
 		bloodLevel -= amountToDraw;
+	}
+
+	public String getPatientID() {
+
+		return patientID;
+	}
+
+	public String getPatientName() {
+		return patientName;
 	}
 		
 		

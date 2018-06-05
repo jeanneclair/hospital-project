@@ -1,8 +1,6 @@
 
 public interface CareForPatient {
 
-	public default void careForPatient(Patient patient) {
-		
-	}
+	public void careForPatient(Patient patient);
 
 }

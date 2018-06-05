@@ -14,6 +14,16 @@ public class Janitor extends Employee {
 		return isSweeping;
 	}
 	
+	public void toggleIsOperating() {
+
+		isSweeping = !isSweeping;
+	}
+
+	@Override
+	public String toString() {
+		return getName()+ "\t" + getEmployeeNumber()+ "\t" + isSweeping();
+	}
+	
 	
 
 }

@@ -55,5 +55,31 @@ public class SurgeonTest {
 		
 		assertThat(isOnPhone, equalTo(true));
 	}
+	
+	@Test
+	public void shouldPassWhenToggleOperatingChangesValueofIsOperating () {
+		
+		Surgeon jeanne = new Surgeon("Jeanne", "1111", "Heart", 120000, false);
+		
+		boolean valueOfIsOperatingBeforeToggle = jeanne.isOperating();
+		jeanne.toggleIsOperating();
+		boolean valueOfIsOperatingAfterToggle = jeanne.isOperating();
+		
+		assertThat(valueOfIsOperatingAfterToggle, equalTo(!valueOfIsOperatingBeforeToggle));
+		
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

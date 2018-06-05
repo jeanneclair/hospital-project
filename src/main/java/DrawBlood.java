@@ -1,7 +1,5 @@
 
 public interface DrawBlood {
 
-public default void drawBlood(Patient patient) {
-		
-	}
+public void drawBlood(Patient patient);
 }

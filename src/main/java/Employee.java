@@ -28,4 +28,11 @@ public abstract class Employee {
 
 		return salary;
 	}
+
+	@Override
+	public String toString() {
+		return "Employee [getName()=" + getName() + ", getEmployeeNumber()=" + getEmployeeNumber() + ", calculatePay()="
+				+ calculatePay() + "]";
+	}
+	
 }

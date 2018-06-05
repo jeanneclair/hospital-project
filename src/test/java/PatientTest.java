@@ -5,7 +5,9 @@ import org.junit.Test;
 
 public class PatientTest {
 
-	Patient patient = new Patient();
+	
+	Patient patient = new Patient("111", "Jeanne Clair", 20, 20);
+
 	
 	@Test
 	public void healShouldIncreasePatientHealth() {
@@ -26,11 +28,14 @@ public class PatientTest {
 		
 		int patientBloodLevelBeforeBloodDraw = patient.getBloodLevel();
 		
-		patient.drawBlood(5);
+		patient.bleed(5);
 		int patientBloodLevelAfterBloodDraw = patient.getBloodLevel();
 		
 		assertThat(patientBloodLevelAfterBloodDraw, equalTo(patientBloodLevelBeforeBloodDraw - 5));
-		
-		
+			
 	}
+	
+
+	
+	
 }
