@@ -6,12 +6,12 @@ import org.junit.Test;
 public class DoctorTest {
 
 	Doctor phil = new Doctor("Phil", "1111", "Heart", 90000);
+	Patient patient = new Patient ("111", "Jeanne", 25, 25);
 
 	@Test
 	public void careForPatientShouldIncreasePatientHealth() {
 
 		// Arrange
-		Patient patient = new Patient(25, 25);
 		int patientHealthBeforeCare = patient.getHealthLevel();
 
 		// Act
@@ -38,7 +38,6 @@ public class DoctorTest {
 	@Test
 	public void drawBloodShouldDecreasePatientBloodLevel() {
 		
-		Patient patient = new Patient (25, 25);
 		int patientBloodLevelBeforeBloodDraw = patient.getBloodLevel();
 		
 		phil.drawBlood(patient);

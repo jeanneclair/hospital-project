@@ -16,6 +16,13 @@ public class Hospital {
 
 		return employees.values();
 	}
+	
+	//made this on my own
+	public Employee getAnEmployee(String name) {
+		
+		return employees.get(name);
+	}
+	
 
 	public void addEmployee(String name, Employee employee) {
 		
