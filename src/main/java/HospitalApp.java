@@ -1,3 +1,4 @@
+import java.io.ObjectInputStream.GetField;
 import java.util.Scanner;
 
 public class HospitalApp {
@@ -157,13 +158,16 @@ public class HospitalApp {
 				System.out.println("Search employee by name:");
 				String searchName = input.nextLine();
 
-				for (Employee employee : hospital.getAllEmployees()) {
 
-					if (employee.getName().equals(searchName)) {
-
-						System.out.println(employee.toString());
-
-					}
+				if (hospital.employees.containsKey(searchName)) {
+					
+					Employee foundEmployee = hospital.employees.get(searchName);
+					
+					System.out.println(foundEmployee.toString());
+					
+				} else {
+					
+					System.out.println("\nThat employee does not exist.");
 
 				}
 				break;
