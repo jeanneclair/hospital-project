@@ -3,22 +3,19 @@ import java.util.Scanner;
 
 public class HospitalApp {
 
+	static Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 
-		Scanner input = new Scanner(System.in);
 
 		Hospital hospital = new Hospital();
-		Doctor phil = new Doctor("Phil", "1111", "Heart", 90000);
-		Surgeon harry = new Surgeon("Harry", "2222", "Brain", 120000, true);
-		Nurse jackie = new Nurse("Jackie", "3333", 6, 50000);
-		Receptionist janine = new Receptionist("Janine", "4444", 45000, true);
-		Janitor rosie = new Janitor("Rosie", "5555", 40000, true);
 
-		hospital.employees.put("Phil", phil);
-		hospital.employees.put("Harry", harry);
-		hospital.employees.put("Jackie", jackie);
-		hospital.employees.put("Janine", janine);
-		hospital.employees.put("Rosie", rosie);
+		hospital.addEmployee(new Doctor("Phil", "1111", "Heart", 90000));
+		hospital.addEmployee(new Surgeon("Harry", "2222", "Brain", 120000, true));
+		hospital.addEmployee(new Nurse("Jackie", "3333", 6, 50000));
+		hospital.addEmployee(new Receptionist("Janine", "4444", 45000, true));
+		hospital.addEmployee(new Janitor("Rosie", "5555", 40000, true));
+		
 
 		Patient patient = new Patient();
 
@@ -43,7 +40,6 @@ public class HospitalApp {
 				break;
 
 			case "2":
-				employeeStatus(hospital);
 
 				System.out.println("\nHere are the pay rates at High St. Hositpal:\n");
 
@@ -155,13 +151,13 @@ public class HospitalApp {
 
 			case "7":
 
-				System.out.println("Search employee by name:");
-				String searchName = input.nextLine();
+				System.out.println("Search employee by employee number:");
+				String searchNum = input.nextLine();
 
 
-				if (hospital.employees.containsKey(searchName)) {
+				if (hospital.employees.containsKey(searchNum)) {
 					
-					Employee foundEmployee = hospital.employees.get(searchName);
+					Employee foundEmployee = hospital.employees.get(searchNum);
 					
 					System.out.println(foundEmployee.toString());
 					

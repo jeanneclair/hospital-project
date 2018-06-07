@@ -17,16 +17,15 @@ public class Hospital {
 		return employees.values();
 	}
 	
-	//made this on my own
 	public Employee getAnEmployee(String name) {
 		
 		return employees.get(name);
 	}
 	
-
-	public void addEmployee(String name, Employee employee) {
+	//changing
+	public void addEmployee(Employee employee) {
 		
-		employees.put(name, employee);
+		employees.put(employee.getEmployeeNumber(), employee);
 		
 	}
 

@@ -14,7 +14,7 @@ public class HospitalTest {
 	public void shouldPassWhenGetAllEmployeesReturnsSize() {
 		
 		Doctor employee = new Doctor ("Dr Jeanne", "1111", "brain", 80000);
-		hospital.addEmployee("Dr Jeanne", employee);
+		hospital.addEmployee(employee);
 		hospital.getAllEmployees();
 		
 		assertThat(1, equalTo(hospital.getAllEmployees().size()));
@@ -24,7 +24,7 @@ public class HospitalTest {
 	public void shouldPassWhenGetAddEmployeeReturnsSize() {
 
 		Doctor employee = new Doctor ("Dr Jeanne", "1111", "brain", 80000);
-		hospital.addEmployee("Dr Jeanne", employee);
+		hospital.addEmployee(employee);
 		
 		assertThat(1, equalTo(hospital.getAllEmployees().size()));
 		
@@ -34,7 +34,7 @@ public class HospitalTest {
 	public void shouldPassWhenFireEmployeeReturnsSize () {
 		
 		Doctor employee = new Doctor ("Dr Jeanne", "1111", "brain", 80000);
-		hospital.addEmployee("Dr Jeanne", employee);
+		hospital.addEmployee(employee);
 		hospital.fireEmployee(employee);
 		
 		assertThat(0, equalTo(hospital.getAllEmployees().size()));
@@ -47,9 +47,9 @@ public class HospitalTest {
 		int employeesWhoCanDrawBlood = 0;
 		
 		Doctor Jeanne = new Doctor ("Jeanne", "1111", "brain", 80000);
-		hospital.addEmployee("Jeanne", Jeanne);
+		hospital.addEmployee(Jeanne);
 		Surgeon Clair = new Surgeon ("Clair", "2222", "heart", 120000, true);
-		hospital.addEmployee("Clair", Clair);
+		hospital.addEmployee(Clair);
 		
 		for (Employee employee : hospital.getAllEmployees()) {
 			
@@ -69,11 +69,11 @@ public class HospitalTest {
 		
 		int employeesWhoCanCareForPatients = 0;
 		Doctor Jeanne = new Doctor ("Jeanne", "1111", "brain", 80000);
-		hospital.addEmployee("Jeanne", Jeanne);
+		hospital.addEmployee(Jeanne);
 		Surgeon Clair = new Surgeon ("Clair", "2222", "heart", 120000, true);
-		hospital.addEmployee("Clair", Clair);
+		hospital.addEmployee(Clair);
 		Nurse Marie = new Nurse ("Marie", "3333", 5, 50000);
-		hospital.addEmployee("Marie", Marie);
+		hospital.addEmployee(Marie);
 		
 		for (Employee employee : hospital.getAllEmployees()) {
 			
